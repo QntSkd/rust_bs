@@ -11,7 +11,7 @@ pub struct BlackScholes{
 
 impl BlackScholes{
     pub fn normal_cdf(&self, x:f64)->f64{
-        return 0.5 *(1.0 + libm::erf(x/2.0_f64.sqrt()))
+        return 0.5 *(1.0 + libm::erf(x/2.0_f64.sqrt()));
     }
     pub fn get_d1(&self)->f64{
         return ((self.S/self.K).ln() + 
@@ -24,10 +24,10 @@ impl BlackScholes{
     pub fn call_price(&self)->f64{
         return self.normal_cdf(self.get_d1())*self.S -
                self.normal_cdf(self.get_d2()) * 
-               self.K * (-self.r * self.t).exp()
+               self.K * (-self.r * self.t).exp();
     }
     pub fn put_price(&self)->f64{
         return (-self.r * self.t).exp()* self.normal_cdf(-self.get_d2())
-                * self.K - self.normal_cdf(-self.get_d1()) * self.S
+                * self.K - self.normal_cdf(-self.get_d1()) * self.S;
     }
 }
