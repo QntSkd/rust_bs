@@ -1,0 +1,9 @@
+[package]
+name = "BlackScholes"
+version = "0.1.0"
+authors = ["Skid"]
+edition = "2018"
+
+
+[dependencies]
+libm = "0.2.1"
